@@ -1,0 +1,32 @@
+2026-06-24 15:00:54 | INFO     | __main__ | Starting pipeline. run_id=1be6dd7a-b09c-4569-8149-52640fb113ad, batch_id=batch_20260624_12
+2026-06-24 15:00:56 | INFO     | ingestion.snowflake_loader | Connected to Snowflake for raw data loading.
+2026-06-24 15:00:56 | INFO     | ingestion.audit | Connected to Snowflake for audit logging.
+2026-06-24 15:00:56 | INFO     | ingestion.aviationstack_client | Fetching flights (attempt 1/3, limit=100, offset=0)
+2026-06-24 15:00:58 | INFO     | ingestion.aviationstack_client | Successfully fetched flight data.
+2026-06-24 15:00:58 | INFO     | __main__ | API returned pagination.count=100, actual records=100
+2026-06-24 15:00:59 | INFO     | ingestion.snowflake_loader | No existing rows found for batch_id=batch_20260624_12.
+2026-06-24 15:00:59 | INFO     | ingestion.snowflake_loader | Loading 100 flight records into RAW.FLIGHTS_RAW.
+2026-06-24 15:01:37 | INFO     | ingestion.snowflake_loader | Successfully loaded 100 rows into RAW.FLIGHTS_RAW for batch_id=batch_20260624_12.
+2026-06-24 15:01:37 | INFO     | __main__ | Pipeline completed successfully. Rows extracted=100, rows loaded=100
+2026-06-24 15:01:37 | INFO     | ingestion.audit | Audit log written successfully. run_id=1be6dd7a-b09c-4569-8149-52640fb113ad, status=SUCCESS, extracted=100, loaded=100, rejected=0
+2026-06-24 15:01:37 | INFO     | ingestion.snowflake_loader | Snowflake loader connection closed.
+2026-06-24 15:01:38 | INFO     | ingestion.audit | Snowflake audit logging connection closed.
+2026-06-24 15:01:38 | INFO     | __main__ | Pipeline resources closed. run_id=1be6dd7a-b09c-4569-8149-52640fb113ad
+2026-06-24 22:03:11 | INFO     | __main__ | Starting pipeline. run_id=30d6c55a-00d1-4d82-9a16-394a089bbd11, batch_id=batch_20260624_19
+2026-06-24 22:03:13 | INFO     | ingestion.snowflake_loader | Connected to Snowflake for raw data loading.
+2026-06-24 22:03:13 | INFO     | ingestion.audit | Connected to Snowflake for audit logging.
+2026-06-24 22:03:13 | INFO     | ingestion.watermark | Connected to Snowflake for watermark tracking.
+2026-06-24 22:03:14 | INFO     | ingestion.watermark | Quota check passed: 0/100 requests used this month (2026-06).
+2026-06-24 22:03:14 | INFO     | ingestion.aviationstack_client | Fetching flights (attempt 1/3, limit=100, offset=0)
+2026-06-24 22:03:16 | INFO     | ingestion.aviationstack_client | Successfully fetched flight data.
+2026-06-24 22:03:16 | INFO     | __main__ | API returned pagination.count=100, actual records=100
+2026-06-24 22:03:17 | INFO     | ingestion.snowflake_loader | No existing rows found for batch_id=batch_20260624_19.
+2026-06-24 22:03:17 | INFO     | ingestion.snowflake_loader | Loading 100 flight records into RAW.FLIGHTS_RAW.
+2026-06-24 22:03:57 | INFO     | ingestion.snowflake_loader | Successfully loaded 100 rows into RAW.FLIGHTS_RAW for batch_id=batch_20260624_19.
+2026-06-24 22:03:58 | INFO     | ingestion.watermark | Watermark updated. batch_id=batch_20260624_19, requests_made=1
+2026-06-24 22:03:58 | INFO     | __main__ | Pipeline completed successfully. Rows extracted=100, rows loaded=100
+2026-06-24 22:03:58 | INFO     | ingestion.audit | Audit log written successfully. run_id=30d6c55a-00d1-4d82-9a16-394a089bbd11, status=SUCCESS, extracted=100, loaded=100, rejected=0
+2026-06-24 22:03:59 | INFO     | ingestion.snowflake_loader | Snowflake loader connection closed.
+2026-06-24 22:03:59 | INFO     | ingestion.audit | Snowflake audit logging connection closed.
+2026-06-24 22:03:59 | INFO     | ingestion.watermark | Watermark manager connection closed.
+2026-06-24 22:03:59 | INFO     | __main__ | Pipeline resources closed. run_id=30d6c55a-00d1-4d82-9a16-394a089bbd11
