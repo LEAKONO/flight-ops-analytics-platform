@@ -11,7 +11,6 @@ SOURCE_NAME = "aviationstack_flights"
 
 
 class WatermarkManager:
-    """Tracks API quota usage and run history in CONTROL.WATERMARKS."""
 
     def __init__(self):
         try:
@@ -32,11 +31,6 @@ class WatermarkManager:
         return datetime.now(timezone.utc).strftime("%Y-%m")
 
     def check_quota(self):
-        """
-        Returns True if we're allowed to make another API call this month,
-        False if quota is exhausted. Handles month-rollover by resetting
-        the counter when the calendar month has changed since last check.
-        """
         cursor = self.conn.cursor()
         try:
             cursor.execute(

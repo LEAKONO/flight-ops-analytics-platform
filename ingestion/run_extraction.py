@@ -88,9 +88,9 @@ def run():
 
         try:
             audit.log_run(
-                pipeline_run_id=pipeline_run_id,
+                pipeline_run_id=pipeline_run_id,#
                 execution_start=execution_start,
-                execution_end=execution_end,
+                execution_end=execution_end,#
                 rows_extracted=rows_extracted,
                 rows_loaded=rows_loaded,
                 rows_rejected=max(0, rows_extracted - rows_loaded),
