@@ -1,0 +1,49 @@
+[0m21:53:29.643451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785a1dcacb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785a1d0f6930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785a1d61d820>]}
+
+
+============================== 21:53:29.648431 | d37458e1-f667-4f92-8f94-cb2ca6375303 ==============================
+[0m21:53:29.648431 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:53:29.649783 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'introspect': 'True', 'empty': 'None', 'profiles_dir': '/home/leakono/.dbt', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'debug': 'False', 'warn_error': 'None', 'version_check': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'use_colors': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'invocation_command': 'dbt init flight_ops_dbt', 'log_format': 'default', 'partial_parse': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None'}
+[0m21:53:29.671181 [debug] [MainThread]: Starter project path: /home/leakono/Engineer/flight-ops-analytics-platform/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m21:53:29.677980 [info ] [MainThread]: 
+Your new dbt project "flight_ops_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:53:29.678827 [info ] [MainThread]: Setting up your profile.
+[0m21:53:38.300191 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m21:53:38.301201 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m21:53:38.302103 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m21:56:40.906783 [info ] [MainThread]: Profile flight_ops_dbt written to /home/leakono/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m21:56:40.929891 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 191.5621, "process_in_blocks": "368", "process_kernel_time": 0.195757, "process_mem_max_rss": "129780", "process_out_blocks": "80", "process_user_time": 2.949274}
+[0m21:56:40.931234 [debug] [MainThread]: Command `dbt init` succeeded at 21:56:40.930982 after 191.56 seconds
+[0m21:56:40.932031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785a1d601340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785a1b695f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x785a1cb6d8e0>]}
+[0m21:56:40.934200 [debug] [MainThread]: Flushing usage events
+[0m21:56:42.041981 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:56:02.048936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7755b2f9fb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7755b3c64800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7755b3f9cda0>]}
+
+
+============================== 12:56:02.067703 | 0e5ec9df-e717-44b3-a6c3-9ad6ed1996a5 ==============================
+[0m12:56:02.067703 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:56:02.068866 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'printer_width': '80', 'warn_error': 'None', 'target_path': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'write_json': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'version_check': 'True', 'introspect': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/home/leakono/.dbt', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --select staging', 'log_cache_events': 'False'}
+[0m12:56:02.070016 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/leakono/Engineer/flight-ops-analytics-platform/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:56:02.072471 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.13650845, "process_in_blocks": "24", "process_kernel_time": 0.178435, "process_mem_max_rss": "103700", "process_out_blocks": "16", "process_user_time": 2.48437}
+[0m12:56:02.073873 [debug] [MainThread]: Command `dbt run` failed at 12:56:02.073636 after 0.14 seconds
+[0m12:56:02.074806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7755b2f082c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7755b355e9f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7755b3689490>]}
+[0m12:56:02.075706 [debug] [MainThread]: Flushing usage events
+[0m12:56:09.478001 [debug] [MainThread]: An error was encountered while trying to flush usage events

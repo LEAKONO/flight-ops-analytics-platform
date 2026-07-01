@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    database: FLIGHT_TRACKING
+    schema: RAW
+    tables:
+      - name: flights_raw
+        description: "Raw, untouched flight payloads from the AviationStack API, landed by the Python ingestion pipeline."
+        config:
+          loaded_at_field: ingestion_timestamp
+        columns:
+          - name: raw_id
+            description: "Surrogate key UUID for this raw row."
+          - name: batch_id
+            description: "Identifies which pipeline run/batch this row belongs to."
+          - name: pipeline_run_id
+            description: "Unique ID for the specific extraction attempt that loaded this row."
+          - name: raw_payload
+            description: "The full, untouched JSON response from AviationStack for one flight record."

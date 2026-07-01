@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: fact_flight
+    description: "One row per physical (operating) flight occurrence. Codeshare duplicates are collapsed to the operating carrier's record."
+    columns:
+      - name: flight_key
+        description: "Surrogate key — md5 hash of flight_date, flight identifier, and route."
+        tests:
+          - unique
+          - not_null
+
+      - name: date_key
+        description: "Foreign key to dim_date."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+
+      - name: departure_airport_key
+        description: "Foreign key to dim_airport (departure role)."
+        tests:
+          - not_null
+
+      - name: arrival_airport_key
+        description: "Foreign key to dim_airport (arrival role)."
+        tests:
+          - not_null
+
+      - name: flight_status
+        tests:
+          - accepted_values:
+              values: ['scheduled', 'active', 'landed', 'cancelled', 'incident', 'diverted']
+
+  - name: dim_date
+    description: "Calendar dimension covering 2024-2026."
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_airport
+    description: "One row per distinct airport."
+    columns:
+      - name: airport_key
+        tests:
+          - unique
+          - not_null
+      - name: airport_iata
+        tests:
+          - not_null
+
+  - name: dim_airline
+    description: "One row per distinct airline."
+    columns:
+      - name: airline_key
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_aircraft
+    description: "One row per distinct aircraft (icao24)."
+    columns:
+      - name: aircraft_key
+        tests:
+          - unique
+          - not_null
